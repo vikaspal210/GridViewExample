@@ -12,6 +12,6 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         Intent intent=getIntent();
-        Toast.makeText(this, intent.getStringExtra("name"), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "data recieved: "+intent.getStringExtra("name"), Toast.LENGTH_SHORT).show();
     }
 }

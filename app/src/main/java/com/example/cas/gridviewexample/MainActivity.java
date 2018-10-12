@@ -44,30 +44,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Intent intent;
+                Class classObject;
                 switch(position) {
                     case 0:
-                        intent = new Intent(getBaseContext(), FirstActivity.class);
-                        intent.putExtra("name","Vikas Pal with 1");
+                        classObject=FirstActivity.class;
                         break;
 
                     case 1:
-                        intent = new Intent(getBaseContext(), SecondActivity.class);
-                        intent.putExtra("name","Vikas Pal with 2");
+                        classObject=SecondActivity.class;
                         break;
                     case 2:
-                        intent = new Intent(getBaseContext(), ThirdActivity.class);
-                        intent.putExtra("name","Vikas Pal with 3");
+                        classObject=ThirdActivity.class;
                         break;
                     case 3:
-                        intent = new Intent(getBaseContext(), SecondActivity.class);
+                        classObject=FirstActivity.class;
                         break;
                     case 4:
-                        intent = new Intent(getBaseContext(), FirstActivity.class);
+                        classObject=SecondActivity.class;
                         break;
                     default:
-                        intent = new Intent(getBaseContext(), ThirdActivity.class);
+                        classObject=FirstActivity.class;
                         break;
                 }
+                intent = new Intent(getBaseContext(), classObject);
+                intent.putExtra("name","Position Clicked: "+position);
                 startActivity(intent);
             }
         });
